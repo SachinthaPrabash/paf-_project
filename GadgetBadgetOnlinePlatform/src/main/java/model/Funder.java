@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -179,15 +180,16 @@ public class Funder {
 			String query = " update funders set funderName=?,category=? ,description=?,fundingAmount=?, fundStartDate=?,fundEndDate=? where funderID=?";
 			
 			PreparedStatement preparedStmt = con.prepareStatement(query);
-			
+						
 			// binding values			
 			preparedStmt.setString(1, name);
 			preparedStmt.setString(2, category);
 			preparedStmt.setString(3, desc);
 			preparedStmt.setDouble(4, Double.parseDouble(amount));
-			preparedStmt.setInt(5, Integer.parseInt(id));
-			preparedStmt.setDate(6, fundingstartdate);
-			preparedStmt.setDate(7, fundinendate);
+			preparedStmt.setDate(5,Date.valueOf(fundingstartdate));;
+			preparedStmt.setDate(6,Date.valueOf(fundinendate));
+			preparedStmt.setInt(7, Integer.parseInt(id));
+			
 			//execute the statement
 			preparedStmt.execute();
 			con.close();

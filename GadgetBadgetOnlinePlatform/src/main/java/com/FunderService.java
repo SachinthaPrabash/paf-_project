@@ -58,7 +58,7 @@ public class FunderService {
 		String category = itemObject.get("category").getAsString();
 		String description = itemObject.get("description").getAsString();
 		String fundingAmount = itemObject.get("fundingAmount").getAsString();
-		Date fundingstartdate = itemObject.get("fundStartDate").getAsString();
+		String fundingstartdate = itemObject.get("fundStartDate").getAsString();
 		String fundinendate = itemObject.get("fundEndDate").getAsString();
 		
 		String output = funderObj.UpdateItem(funderID, funderName, category, description, fundingAmount,fundingstartdate,fundinendate);
