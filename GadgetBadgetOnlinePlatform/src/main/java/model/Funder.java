@@ -32,7 +32,7 @@ public class Funder {
 		return con;
 	}
 	
-	public String insertItem(String name, String category, String desc, String amount, String startDate, String endDate)
+	public String insertFund(String name, String category, String desc, String amount, String startDate, String endDate)
 	{
 		
 		String output = "";
@@ -72,7 +72,7 @@ public class Funder {
 		return output;
 	}
 	
-	public String readItems()
+	public String readFunddata()
 	{
 		String output = "";
 		
@@ -128,7 +128,7 @@ public class Funder {
 		return output;
 	}
 	
-	public String deleteItem(String funderID)
+	public String deletefundData(String funderID)
 	{
 		String output = "";
 		
@@ -164,7 +164,7 @@ public class Funder {
 		return output;
 	}
 	
-	public String UpdateItem(String id,String name, String category, String desc, String amount, String fundingstartdate, String fundinendate)
+	public String Updatefund(String id,String name, String category, String desc, String amount, String fundingstartdate, String fundinendate)
 	{
 		
 		String output = "";

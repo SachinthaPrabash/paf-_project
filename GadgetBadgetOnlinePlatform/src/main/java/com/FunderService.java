@@ -26,7 +26,7 @@ public class FunderService {
 	@Produces(MediaType.TEXT_HTML)
 	public String readItems()
 	{
-		return funderObj.readItems();
+		return funderObj. readFunddata();
 	}
 	
 	@POST
@@ -40,7 +40,7 @@ public class FunderService {
 			@FormParam("fundStartDate") String fundingstartdate,
 			@FormParam("fundEndDate") String fundinendate)
 	{
-		String output = funderObj.insertItem(funderName, category, description, fundingAmount,fundingstartdate,fundinendate);
+		String output = funderObj.insertFund(funderName, category, description, fundingAmount,fundingstartdate,fundinendate);
 		return output;
 	}
 	
@@ -61,7 +61,7 @@ public class FunderService {
 		String fundingstartdate = itemObject.get("fundStartDate").getAsString();
 		String fundinendate = itemObject.get("fundEndDate").getAsString();
 		
-		String output = funderObj.UpdateItem(funderID, funderName, category, description, fundingAmount,fundingstartdate,fundinendate);
+		String output = funderObj.Updatefund(funderID, funderName, category, description, fundingAmount,fundingstartdate,fundinendate);
 		return output;
 	}
 	
@@ -77,7 +77,7 @@ public class FunderService {
 		//Read the value from the element <itemID>
 		String funderID = doc.select("funderID").text();
 		
-		String output = funderObj.deleteItem(funderID);
+		String output = funderObj.deletefundData(funderID);
 		
 		return output;
 	}
