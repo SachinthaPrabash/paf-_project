@@ -55,8 +55,8 @@ public class Funder {
 			preparedStmt.setString(3, category);
 			preparedStmt.setString(4, desc);
 			preparedStmt.setDouble(5, Double.parseDouble(amount));
-			preparedStmt.setString(6, startDate);
-			preparedStmt.setString(7, endDate);
+			preparedStmt.setDate(6, Date.valueOf(startDate));
+			preparedStmt.setDate(7, Date.valueOf(endDate));
 			//execute the statement
 			preparedStmt.execute();
 			con.close();
@@ -186,9 +186,10 @@ public class Funder {
 			preparedStmt.setString(2, category);
 			preparedStmt.setString(3, desc);
 			preparedStmt.setDouble(4, Double.parseDouble(amount));
-			preparedStmt.setDate(5,Date.valueOf(fundingstartdate));;
-			preparedStmt.setDate(6,Date.valueOf(fundinendate));
+			preparedStmt.setDate(5, Date.valueOf(fundingstartdate));
+			preparedStmt.setDate(6, Date.valueOf(fundinendate));
 			preparedStmt.setInt(7, Integer.parseInt(id));
+			
 			
 			//execute the statement
 			preparedStmt.execute();
