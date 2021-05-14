@@ -131,21 +131,6 @@ function onFundDeleteComplete(response, status)
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // CLIENT-MODEL================================================================
 function validateFundForm() {
 	// CODE
@@ -156,39 +141,31 @@ function validateFundForm() {
 	if ($("#category").val().trim() == "") {
 		return "Insert Fund category";
 	}
-/*	// PRICE-------------------------------
-	if ($("#funderAmount").val().trim() == "") {
+	// Discription
+	if ($("#description").val().trim() == "") {
+		return "Insert Fund description";
+	}
+	// PRICE-------------------------------
+	if ($("#fundingAmount").val().trim() == "") {
 		return "Insert Fund amount.";
 	}
 	// is numerical value
-	var tmpPrice = $("#funderAmount").val().trim();
+	var tmpPrice = $("#fundingAmount").val().trim();
 	if (!$.isNumeric(tmpPrice)) {
 		return "Insert a numerical value for fund amount.";
 	}
 	// convert to decimal price
-	$("#funderAmount").val(parseFloat(tmpPrice).toFixed(2));
-	// DESCRIPTION------------------------
-	if ($("#funderDesc").val().trim() == "") {
-		return "Insert Item Description.";
-	}  */
+	$("#fundingAmount").val(parseFloat(tmpPrice).toFixed(2));
+
+	//funder amount start data
+	if($("#fundStartDate").val().trim() == ""){
+		return "Insert fund amount start date.";
+	}
+		
+	//funder amount end data
+	if($("#fundEndDate").val().trim() == ""){
+		return "Insert fund amount End date.";
+	} 
+		
 	return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
